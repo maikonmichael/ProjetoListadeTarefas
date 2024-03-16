@@ -44,7 +44,7 @@ function displayTarefas(){
         li.innerHTML =  `
             <span>${tarefa.text}</span>
             <hr>
-            <button class="edit-button" onclick="editTarefa(${index})">Ediar</button>
+            <button class="edit-button" onclick="editTarefa(${index})">Editar</button>
             <button class="delete-button" onclick="deleteTarefa(${index})">Deletar</button>
         `;
         listatarefas.appendChild(li);
