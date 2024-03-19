@@ -37,7 +37,6 @@ function editTarefa(index){
 }
 
 // CRIA UMA TABELA COM AS TAREFAS E ELEMENTOS
-// CRIA UMA TABELA COM AS TAREFAS E ELEMENTOS
 function displayTarefas(){
     listatarefas.innerHTML = "";
     tarefas.forEach((tarefa, index) => {
