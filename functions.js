@@ -37,18 +37,28 @@ function editTarefa(index){
 }
 
 // CRIA UMA TABELA COM AS TAREFAS E ELEMENTOS
+// CRIA UMA TABELA COM AS TAREFAS E ELEMENTOS
 function displayTarefas(){
     listatarefas.innerHTML = "";
     tarefas.forEach((tarefa, index) => {
         const li = document.createElement("li");
         li.innerHTML =  `
-            <span>${tarefa.text}</span>
+            <input type="checkbox" value="">
+            <span class="marca_tarefa">${tarefa.text}</span>
             <hr>
             <button class="edit-button" onclick="editTarefa(${index})">Editar</button>
             <button class="delete-button" onclick="deleteTarefa(${index})">Deletar</button>
         `;
         listatarefas.appendChild(li);
     });
+
+    //MARCA TAREFA COMO CONCLUIDA
+    document.querySelectorAll('input[type=checkbox]').forEach((elemento) => {
+        elemento.addEventListener('change', (e) => {
+          var span = e.target.parentNode.querySelector('.marca_tarefa');
+          span.style.textDecoration = (e.target.checked) ? "line-through" : "";         
+        });
+    });    
 }
 
 displayTarefas();
